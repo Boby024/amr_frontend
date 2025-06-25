@@ -1,63 +1,27 @@
-# AMR: Frontend - Angular Application
+# AmrFrontend
 
-<p>This is the frontend of the project, built with Angular and optionally containerized using Docker.</p>
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
-<h2>Project Structure</h2>
+## Development server
 
-<pre>
-frontend/
-├── angular.json         # Angular project configuration file
-├── src/                 # Source code for the Angular application
-└── Dockerfile           # Dockerfile for building and running the frontend in a container
-</pre>
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-<h2>Getting Started</h2>
+## Code scaffolding
 
-<h3>Prerequisites</h3>
-<ul>
-<li><a href="https://nodejs.org/en/download/">Node.js (v20+ recommended)</a></li>
-<li><a href="https://angular.io/cli">Angular CLI (v17+)</a></li>
-<li>Package Manager: npm(v10+)</li>
-<li><a href="https://docs.docker.com/get-docker/">Docker</a> (optional, for containerized deployment)</li>
-</ul>
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-<h3>Running the App (Locally)</h3>
+## Build
 
-<ol>
-<li>Navigate to the <code>frontend</code> directory:
-    <pre>cd frontend</pre>
-</li>
-<li>Install dependencies:
-    <pre>npm install</pre>
-</li>
-<li>Serve the app locally:
-    <pre>ng serve</pre>
-</li>
-</ol>
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-<p>The app will be available at <a href="http://localhost:4200/">http://localhost:4200/</a> by default.</p>
+## Running unit tests
 
-<h3>Running with Docker</h3>
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-<ol>
-<li>Navigate to the <code>frontend</code> directory:
-    <pre>cd frontend</pre>
-</li>
-<li>Build the Docker image:
-    <pre>docker build -t arm-frontend .</pre>
-</li>
-<li>Run the container:
-    <pre>docker run -p 4200:80 arm-frontend</pre>
-</li>
-</ol>
+## Running end-to-end tests
 
-<p>The containerized app should now be accessible at <a href="http://localhost:4200/">http://localhost:4200/</a>.</p>
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-<h2>Notes</h2>
-<ul>
-<li>Source code lives in the <code>src/</code> directory following standard Angular structure.</li>
-<li>Make sure your <code>Dockerfile</code> handles Angular production builds correctly (e.g., using <code>ng build --prod</code>).</li>
-</ul>
+## Further help
 
-<h2>License</h2>
-<!-- <p>This project is licensed under the MIT License. See the <code>LICENSE</code> file for details.</p> -->
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
