@@ -1,110 +1,63 @@
-# analyze-my-resume
+# AMR: Frontend - Angular Application
 
-<h2>Description</h2>
-A web application that allows users to upload resumes and job descriptions, 
-then intelligently analyzes the resume content to highlight skill gaps, 
-missing keywords, and offer AI-powered improvement suggestions using NLP and the OpenAI API.
+<p>This is the frontend of the project, built with Angular and optionally containerized using Docker.</p>
 
-<h2>Tech Stack</h2>
+<h2>Project Structure</h2>
 
-| Layer          | Technology                            | Purpose                                                  |
-| -------------- | ------------------------------------- | -------------------------------------------------------- |
-| Frontend       | Angular                               | Responsive UI, form handling, result visualization       |
-| Backend        | Flask (Python)                        | REST API, orchestration between NLP and OpenAI APIs      |
-| NLP Processing | Python (spaCy, NLTK, or Transformers) | Text extraction, keyword extraction, similarity analysis |
-| AI Enhancement | Not defined yet                       | Generate suggestions for resume improvement              |
-| File Parsing   | PyPDF2 or pdfplumber                  | Extract text from uploaded documents                     |
-| Deployment     | Docker                                | /                                                        |
+<pre>
+frontend/
+├── angular.json         # Angular project configuration file
+├── src/                 # Source code for the Angular application
+└── Dockerfile           # Dockerfile for building and running the frontend in a container
+</pre>
 
+<h2>Getting Started</h2>
 
-<h2>Core Features</h2>
+<h3>Prerequisites</h3>
+<ul>
+<li><a href="https://nodejs.org/en/download/">Node.js (v20+ recommended)</a></li>
+<li><a href="https://angular.io/cli">Angular CLI (v17+)</a></li>
+<li>Package Manager: npm(v10+)</li>
+<li><a href="https://docs.docker.com/get-docker/">Docker</a> (optional, for containerized deployment)</li>
+</ul>
+
+<h3>Running the App (Locally)</h3>
 
 <ol>
-  <li>
-    <strong>Resume Upload &amp; Parsing</strong>
-    <ul>
-      <li><strong>Input:</strong> Upload resume file (PDF, DOCX)</li>
-      <li><strong>Backend Process:</strong>
-        <ul>
-          <li>Parse document</li>
-          <li>Clean and normalize text (remove headers/footers, etc.)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Job Description Input</strong>
-    <ul>
-      <li>Text box or file upload for job description</li>
-      <li>Normalize and tokenize for NLP analysis</li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Resume vs JD Analysis</strong>
-    <ul>
-      <li><strong>NLP Matching:</strong>
-        <ul>
-          <li>Keyword extraction (TF-IDF / RAKE / Named Entity Recognition)</li>
-          <li>Compare resume and JD for overlap</li>
-          <li><strong>Highlight:</strong>
-            <ul>
-              <li>Missing required skills</li>
-              <li>Mentioned soft vs hard skills</li>
-              <li>Role-specific terminology</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Skill Gap Visualization</strong>
-    <ul>
-      <li>Angular UI highlights:
-        <ul>
-          <li>Present keywords</li>
-          <li>Missing/weak keywords</li>
-        </ul>
-      </li>
-      <li>Radar chart or bar chart showing match %</li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>AI-Generated Suggestions (Bonus Feature)</strong>
-    <ul>
-      <li>Prompt API suggestion (e.g., GPT-4) with:
-        <ul>
-          <li>Resume text</li>
-          <li>Job description</li>
-        </ul>
-      </li>
-      <li>Receive suggestions like:
-        <ul>
-          <li>“You should include experience with React if you have it.”</li>
-          <li>“Consider emphasizing leadership or collaboration experience.”</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Report Download</strong>
-    <ul>
-      <li>Option to export a summary PDF:
-        <ul>
-          <li>Skill match %</li>
-          <li>Missing keywords</li>
-          <li>AI suggestions</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+<li>Navigate to the <code>frontend</code> directory:
+    <pre>cd frontend</pre>
+</li>
+<li>Install dependencies:
+    <pre>npm install</pre>
+</li>
+<li>Serve the app locally:
+    <pre>ng serve</pre>
+</li>
 </ol>
 
-<h2>Run the project</h2>
-<li> Backend: follow instructions in README.md inside the folder "backend"</li>
-<li> Frontend: follow instructions in README.md inside the folder "frontend"</li>
+<p>The app will be available at <a href="http://localhost:4200/">http://localhost:4200/</a> by default.</p>
+
+<h3>Running with Docker</h3>
+
+<ol>
+<li>Navigate to the <code>frontend</code> directory:
+    <pre>cd frontend</pre>
+</li>
+<li>Build the Docker image:
+    <pre>docker build -t arm-frontend .</pre>
+</li>
+<li>Run the container:
+    <pre>docker run -p 4200:80 arm-frontend</pre>
+</li>
+</ol>
+
+<p>The containerized app should now be accessible at <a href="http://localhost:4200/">http://localhost:4200/</a>.</p>
+
+<h2>Notes</h2>
+<ul>
+<li>Source code lives in the <code>src/</code> directory following standard Angular structure.</li>
+<li>Make sure your <code>Dockerfile</code> handles Angular production builds correctly (e.g., using <code>ng build --prod</code>).</li>
+</ul>
+
+<h2>License</h2>
+<!-- <p>This project is licensed under the MIT License. See the <code>LICENSE</code> file for details.</p> -->
