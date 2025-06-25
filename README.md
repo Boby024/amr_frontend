@@ -1,27 +1,110 @@
-# AmrFrontend
+# analyze-my-resume
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+<h2>Description</h2>
+A web application that allows users to upload resumes and job descriptions, 
+then intelligently analyzes the resume content to highlight skill gaps, 
+missing keywords, and offer AI-powered improvement suggestions using NLP and the OpenAI API.
 
-## Development server
+<h2>Tech Stack</h2>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+| Layer          | Technology                            | Purpose                                                  |
+| -------------- | ------------------------------------- | -------------------------------------------------------- |
+| Frontend       | Angular                               | Responsive UI, form handling, result visualization       |
+| Backend        | Flask (Python)                        | REST API, orchestration between NLP and OpenAI APIs      |
+| NLP Processing | Python (spaCy, NLTK, or Transformers) | Text extraction, keyword extraction, similarity analysis |
+| AI Enhancement | Not defined yet                       | Generate suggestions for resume improvement              |
+| File Parsing   | PyPDF2 or pdfplumber                  | Extract text from uploaded documents                     |
+| Deployment     | Docker                                | /                                                        |
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<h2>Core Features</h2>
 
-## Build
+<ol>
+  <li>
+    <strong>Resume Upload &amp; Parsing</strong>
+    <ul>
+      <li><strong>Input:</strong> Upload resume file (PDF, DOCX)</li>
+      <li><strong>Backend Process:</strong>
+        <ul>
+          <li>Parse document</li>
+          <li>Clean and normalize text (remove headers/footers, etc.)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  <li>
+    <strong>Job Description Input</strong>
+    <ul>
+      <li>Text box or file upload for job description</li>
+      <li>Normalize and tokenize for NLP analysis</li>
+    </ul>
+  </li>
 
-## Running unit tests
+  <li>
+    <strong>Resume vs JD Analysis</strong>
+    <ul>
+      <li><strong>NLP Matching:</strong>
+        <ul>
+          <li>Keyword extraction (TF-IDF / RAKE / Named Entity Recognition)</li>
+          <li>Compare resume and JD for overlap</li>
+          <li><strong>Highlight:</strong>
+            <ul>
+              <li>Missing required skills</li>
+              <li>Mentioned soft vs hard skills</li>
+              <li>Role-specific terminology</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  <li>
+    <strong>Skill Gap Visualization</strong>
+    <ul>
+      <li>Angular UI highlights:
+        <ul>
+          <li>Present keywords</li>
+          <li>Missing/weak keywords</li>
+        </ul>
+      </li>
+      <li>Radar chart or bar chart showing match %</li>
+    </ul>
+  </li>
 
-## Running end-to-end tests
+  <li>
+    <strong>AI-Generated Suggestions (Bonus Feature)</strong>
+    <ul>
+      <li>Prompt API suggestion (e.g., GPT-4) with:
+        <ul>
+          <li>Resume text</li>
+          <li>Job description</li>
+        </ul>
+      </li>
+      <li>Receive suggestions like:
+        <ul>
+          <li>“You should include experience with React if you have it.”</li>
+          <li>“Consider emphasizing leadership or collaboration experience.”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  <li>
+    <strong>Report Download</strong>
+    <ul>
+      <li>Option to export a summary PDF:
+        <ul>
+          <li>Skill match %</li>
+          <li>Missing keywords</li>
+          <li>AI suggestions</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h2>Run the project</h2>
+<li> Backend: follow instructions in README.md inside the folder "backend"</li>
+<li> Frontend: follow instructions in README.md inside the folder "frontend"</li>
